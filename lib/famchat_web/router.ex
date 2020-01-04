@@ -14,16 +14,19 @@ defmodule FamchatWeb.Router do
   end
 
   scope "/", FamchatWeb do
-    pipe_through :browser
+    pipe_through [:browser, FamchatWeb.Plugs.Guest]
 
     resources "/register", UserController, only: [:create, :new]
     get "/login", SessionController, :new
     post "/login", SessionController, :create
-    delete "/logout", SessionController, :delete
-
-    get "/", PageController, :index
   end
 
+  scope "/", FamchatWeb do
+    pipe_through [:browser, FamchatWeb.Plugs.Auth]
+
+    delete "/logout", SessionController, :delete
+    get "/", PageController, :index
+  end
   # Other scopes may use custom stacks.
   # scope "/api", FamchatWeb do
   #   pipe_through :api
