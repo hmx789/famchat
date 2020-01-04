@@ -1,4 +1,5 @@
 # Famchat
+A chat application built with the phoenix framework
 
 To start your Phoenix server:
 
