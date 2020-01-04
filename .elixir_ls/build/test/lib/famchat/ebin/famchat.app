@@ -19,6 +19,8 @@
                         'Elixir.FamchatWeb.LayoutView',
                         'Elixir.FamchatWeb.PageController',
                         'Elixir.FamchatWeb.PageView',
+                        'Elixir.FamchatWeb.Plugs.Auth',
+                        'Elixir.FamchatWeb.Plugs.Guest',
                         'Elixir.FamchatWeb.Router',
                         'Elixir.FamchatWeb.Router.Helpers',
                         'Elixir.FamchatWeb.SessionController',
